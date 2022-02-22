@@ -68,6 +68,12 @@ MHZ::MHZ(Stream * serial, uint8_t type) {
   PwmConfigured = false;
 }
 
+MHZ::MHZ(uint8_t type) {
+  _type = type;
+  SerialConfigured = false;
+  PwmConfigured = false;
+}
+
 /**
  * Enables or disables the debug mode (more logging).
  */
@@ -78,6 +84,11 @@ void MHZ::setDebug(boolean enable) {
   } else {
     Serial.println(F("MHZ: debug mode DISABLED"));
   }
+}
+
+void MHZ::setSerial(Stream * serial) {
+  _serial = serial;
+  SerialConfigured = true;
 }
 
 boolean MHZ::isPreHeating() {

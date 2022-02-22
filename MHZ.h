@@ -33,8 +33,10 @@ class MHZ {
   MHZ(uint8_t pwmpin, uint8_t type);
   MHZ(Stream * serial, uint8_t pwmpin, uint8_t type);
   MHZ(Stream * serial, uint8_t type);
+  MHZ(uint8_t type);
 
   void setDebug(boolean enable);
+  void setSerial(Stream * serial);
 
   boolean isPreHeating();
   boolean isReady();
